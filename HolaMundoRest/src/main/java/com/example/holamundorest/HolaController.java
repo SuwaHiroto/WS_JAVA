@@ -1,7 +1,7 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- 
+ */
 package com.example.holamundorest;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,27 +20,4 @@ public class HolaController {
         return respuesta;
     }
 }
-*/
-package com.example.holamundorest;
 
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
-@RestController
-@RequestMapping("/api/v1") // Versionamiento de API
-public class HolaController {
-
-    @GetMapping("/saludar")
-    public ResponseEntity<ApiResponse> saludar(
-            @RequestParam(value = "nombre", defaultValue = "Invitado") String nombre) {
-        
-        ApiResponse response = new ApiResponse(
-            "Hola " + nombre + ", bienvenido a la API de Java",
-            "1.0.0",
-            System.currentTimeMillis(),
-            true
-        );
-
-        return ResponseEntity.ok(response);
-    }
-}
